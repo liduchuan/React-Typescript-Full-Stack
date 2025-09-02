@@ -1,0 +1,46 @@
+{
+  "name": "ui",
+  "version": "0.5.0",
+  "description": "chrome extension - ui components",
+  "type": "module",
+  "private": true,
+  "sideEffects": true,
+  "files": [
+    "dist/**"
+  ],
+  "types": "index.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean:bundle": "rimraf dist",
+    "clean:node_modules": "pnpx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "pnpm clean:bundle && pnpm clean:node_modules && pnpm clean:turbo",
+    "ready": "tsc -b && tsc-alias -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "tailwind-variants": "^2.1.0",
+    "tailwindcss": "^4.1.12"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^9.1.0",
+    "@storybook/react-vite": "^9.1.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint-plugin-storybook": "^9.1.0",
+    "react-spinners": "^0.17.0",
+    "storybook": "^9.1.0",
+    "tsc-alias": "^1.8.16",
+    "vite": "^7.0.5"
+  }
+}
