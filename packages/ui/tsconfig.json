@@ -22,7 +22,10 @@
   "include": [
     "index.ts",
     "lib",
-    "tailwind.config.ts",
-    ".storybook/*.ts"
+    "tailwind.config.ts"
+  ],
+  "exclude": [
+    "**/*.stories.*",
+    ".storybook/**/*"
   ]
 }
