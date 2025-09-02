@@ -26,6 +26,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.12
         version: 4.1.12
+      ui:
+        specifier: workspace:*
+        version: link:../ui
     devDependencies:
       '@electron-toolkit/eslint-config-prettier':
         specifier: ^3.0.0
