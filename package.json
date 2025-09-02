@@ -1,5 +1,5 @@
 {
-  "name": "moat",
+  "name": "react-full-stack",
   "scripts": {
     "dev": "turbo ready && turbo watch dev",
     "build": "turbo run build"
