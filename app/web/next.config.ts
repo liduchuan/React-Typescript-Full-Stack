@@ -1,8 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: false
+  reactStrictMode: false,
+  async rewrites() {
+    return [
+      {
+        source: '/assets/:path*',
+        destination: '/api/assets/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
