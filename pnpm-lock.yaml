@@ -93,6 +93,8 @@ importers:
 
   packages/tool: {}
 
+  packages/types: {}
+
   packages/ui:
     dependencies:
       react:

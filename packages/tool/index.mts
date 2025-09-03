@@ -1,1 +1,3 @@
-export * from './lib/index.js';
+export interface App {
+  name: string;
+}
