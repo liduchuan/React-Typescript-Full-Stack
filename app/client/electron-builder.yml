@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: moat
+productName: client
 directories:
   buildResources: build
   output: dist
@@ -15,7 +15,7 @@ files:
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
 win:
-  executableName: moat
+  executableName: client
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
