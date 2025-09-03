@@ -2,6 +2,7 @@
   "name": "react-typescript-full-stack",
   "scripts": {
     "dev": "turbo ready && turbo watch dev",
+    "ui": "pnpm --filter ui storybook",
     "build": "turbo run build"
   },
   "devDependencies": {
