@@ -5,6 +5,9 @@
     "src/main/**/*",
     "src/preload/**/*"
   ],
+  "exclude": [
+    "build-icons.js"
+  ],
   "compilerOptions": {
     "composite": true,
     "types": [

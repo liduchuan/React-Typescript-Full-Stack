@@ -12,8 +12,9 @@
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
     "start": "electron-vite preview",
-    "dev": "electron-vite dev",
-    "build": "npm run typecheck && pnpm build:mac",
+    "dev": "pnpm run build-icons && electron-vite dev",
+    "build": "pnpm run build-icons && npm run typecheck && pnpm build:mac",
+    "build-icons": "node build-icons.js",
     "postinstall": "electron-builder install-app-deps",
     "build:unpack": "npm run build && electron-builder --dir",
     "build:win": "npm run build && electron-builder --win",
@@ -24,9 +25,10 @@
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "@tailwindcss/vite": "^4.1.12",
+    "electron-icon-builder": "^2.0.1",
     "tailwindcss": "^4.1.12",
-    "ui": "workspace:*",
-    "tool": "workspace:*"
+    "tool": "workspace:*",
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
@@ -43,6 +45,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "png2icons": "^2.0.1",
     "prettier": "^3.6.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
