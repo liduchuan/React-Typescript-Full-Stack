@@ -1,7 +1,6 @@
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { join } from 'path'
-import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
   // Create the browser window.
@@ -10,8 +9,6 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
-    // 为所有平台设置图标
-    icon: icon,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false
@@ -42,11 +39,6 @@ function createWindow(): void {
 app.whenReady().then(() => {
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
-
-  // 为应用设置 Dock 图标 (macOS)
-  if (process.platform === 'darwin' && app.dock) {
-    app.dock.setIcon(icon)
-  }
 
   // Default open or close DevTools by F12 in development
   // and ignore CommandOrControl + R in production.
